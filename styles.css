@@ -155,23 +155,27 @@ td {
 
 .project_card {
     margin: 15px;
-    padding: 5px 5px 5px 5px;
+    padding: 5px 10px 5px 10px;
     background: rgb(60, 206, 216);
     height: 500px;
     width: 400px;
     display: inline-block;
     box-shadow: 5px 10px gray;
     border-radius: 20px;
-    ;
+    vertical-align: top;
 }
 
 .project_card:hover {
     background-color: yellow;
 }
 
+.card_text {
+    display: inline-block;
+}
+
 .card_image {
-    width: 340px;
-    height: auto;
+    width: auto;
+    height: 240px;
 }
 
 .wrapper {
