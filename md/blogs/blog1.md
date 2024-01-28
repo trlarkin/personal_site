@@ -87,7 +87,7 @@ Lets go back to that funky code from the beginning:
             (lambda (a d)
                 (cons d a)))))
 ```
-yeah that one! Lets say that elim-Pair is defined to take in three types then a pair and a function of two arguments. In Haskell we cannot pass types around like this, but what if I add a little bit of syntax. I will now say that instead of the regular `->` in a type declaration, we also have `-@` which means the argument was a type, not a value of a vertain type, and from then on I want Haskell to know and enforce that if the type is ever mentioned again treat it as the type that was input. The type signature might look something like:
+yeah that one! Lets say that elim-Pair is defined to take in three types then a pair and a function of two arguments. In Haskell we cannot pass types around like this, but what if I add a little bit of syntax. I will now say that instead of the regular `->` in a type declaration, we also have `-@` which means the argument was a type, not a value of a certain type, and from then on I want Haskell to know and enforce that if the type is ever mentioned again treat it as the type that was input. The type signature might look something like:
 ```haskell
 elimPair :: U1 -@ U2 -@ U3 -@ (Pair U1 U2) -> (U1 -> U2 -> U3)
 
