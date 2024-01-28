@@ -259,14 +259,16 @@ here in part <strong>BECAUSE</strong> Haskell does not have dependent
 types so the more Haskelish code will in fact not actually be
 Haskell.</p>
 <h2 id="getting-going">Getting Going</h2>
-<p>It is important to know a few things about Pie (the language), 1.
-Functions are applied in the form
-<code>scheme     (function arg1 arg2 ... argN)</code> 2. Anonymous
-functions are created by using
-<code>scheme     (lambda (arg1 arg2 ...)         ( ...body... ))</code>
-3. Naming a function that can be used elsewhere is
+<p>It is important to know a few things about Pie (the language),</p>
+<ol type="1">
+<li>Functions are applied in the form
+<code>scheme     (function arg1 arg2 ... argN)</code></li>
+<li>Anonymous functions are created by using
+<code>scheme     (lambda (arg1 arg2 ...)         ( ...body... ))</code></li>
+<li>Naming a function that can be used elsewhere is
 <code>scheme     (define function-name         ( ...thing you want to name... ))</code>
-Now we can talk about it.</p>
+Now we can talk about it.</li>
+</ol>
 <p>The way we can make a 2-tuple in Pie (which is called a Pair) is with
 <code>cons</code>. I am skeptical calling <code>cons</code> a function
 because they do not directly say that in the book I’m using, but it acts

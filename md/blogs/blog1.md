@@ -20,6 +20,7 @@ to define a function that swaps elements in a `Pair` (basically a 2-tuple as far
 ## Getting Going
 
 It is important to know a few things about Pie (the language),
+
 1. Functions are applied in the form 
     ```scheme
     (function arg1 arg2 ... argN)
