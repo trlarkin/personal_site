@@ -28,12 +28,12 @@ It is important to know a few things about Pie (the language),
 2. Anonymous functions are created by using 
 ```scheme
 (lambda (arg1 arg2 ...)
-( ...body... ))
+    ( ...body... ))
 ```
 3. Naming a function that can be used elsewhere is
 ```scheme
 (define function-name
-( ...thing you want to name... ))
+    ( ...thing you want to name... ))
 ```
 Now we can talk about it. 
 
@@ -43,7 +43,7 @@ The way we can make a 2-tuple in Pie (which is called a Pair) is with `cons`. I 
 "Error: 2-interactions from an unsaved 
 editor:4:2: Can't determine a type"
 ```
-And we already have an error 😐. Pie is very strict with its types, so we can actually do this by using the `the` function, which lets us tell Pie what the type of out `Pair` is:
+And we already have an error 😐. Pie is very strict with its types, so we can actually do this by using the `the` function, which lets us tell Pie what the type of our `Pair` is:
 ```scheme
 > (the (Pair Nat Nat) (cons 1 2))
 (the (Pair Nat Nat)

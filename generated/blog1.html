@@ -270,13 +270,13 @@ class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb2-1"><a hr
 </ol>
 <div class="sourceCode" id="cb3"><pre
 class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>(<span class="kw">lambda</span> (arg1 arg2 <span class="op">...</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>( ...body... ))</span></code></pre></div>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    ( ...body... ))</span></code></pre></div>
 <ol start="3" type="1">
 <li>Naming a function that can be used elsewhere is</li>
 </ol>
 <div class="sourceCode" id="cb4"><pre
 class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define</span><span class="fu"> function-name</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>( ...thing you want to name... ))</span></code></pre></div>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    ( ...thing you want to name... ))</span></code></pre></div>
 <p>Now we can talk about it.</p>
 <p>The way we can make a 2-tuple in Pie (which is called a Pair) is with
 <code>cons</code>. I am skeptical calling <code>cons</code> a function
@@ -288,7 +288,7 @@ class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb5-1"><a hr
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="st">editor:4:2: Can&#39;t determine a type&quot;</span></span></code></pre></div>
 <p>And we already have an error 😐. Pie is very strict with its types,
 so we can actually do this by using the <code>the</code> function, which
-lets us tell Pie what the type of out <code>Pair</code> is:</p>
+lets us tell Pie what the type of our <code>Pair</code> is:</p>
 <div class="sourceCode" id="cb6"><pre
 class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (the (Pair Nat Nat) (<span class="kw">cons</span> <span class="dv">1</span> <span class="dv">2</span>))</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>(the (Pair Nat Nat)</span>
