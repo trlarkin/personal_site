@@ -22,19 +22,19 @@ to define a function that swaps elements in a `Pair` (basically a 2-tuple as far
 It is important to know a few things about Pie (the language),
 
 1. Functions are applied in the form 
-    ```scheme
-    (function arg1 arg2 ... argN)
-    ```
+```scheme
+(function arg1 arg2 ... argN)
+```
 2. Anonymous functions are created by using 
-    ```scheme
-    (lambda (arg1 arg2 ...)
-        ( ...body... ))
-    ```
+```scheme
+(lambda (arg1 arg2 ...)
+( ...body... ))
+```
 3. Naming a function that can be used elsewhere is
-    ```scheme
-    (define function-name
-        ( ...thing you want to name... ))
-    ```
+```scheme
+(define function-name
+( ...thing you want to name... ))
+```
 Now we can talk about it. 
 
 The way we can make a 2-tuple in Pie (which is called a Pair) is with `cons`. I am skeptical calling `cons` a function because they do not directly say that in the book I'm using, but it acts like one:
