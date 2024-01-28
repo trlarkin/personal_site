@@ -236,9 +236,9 @@ notes/explanations on some topics in functional programming. These
 topics will include dependent types and linear types. Enjoy!</p>
 <h2 id="my-issue-with-scheme">My issue with Scheme</h2>
 <p>Scheme is a beautiful language, and the toy language “Pie” uses the
-Scheme syntax to build its toy language. My problem with it is that it
-is not as pretty, and how pretty something is can really affect my
-perception. In Scheme we end up with things like:</p>
+Scheme syntax as its base. My problem with it is that it is not pretty,
+and how pretty something is can really affect my opinion on it. In
+Scheme we end up with things like:</p>
 <div class="sourceCode" id="cb1"><pre
 class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define</span><span class="fu"> swap</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    (<span class="kw">lambda</span> (p)</span>
@@ -265,8 +265,8 @@ Functions are applied in the form
 functions are created by using
 <code>scheme     (lambda (arg1 arg2 ...)         ( ...body... ))</code>
 3. Naming a function that can be used elsewhere is
-<code>scheme     (define function-name         ( ...thing you want to name... ))</code></p>
-<p>Now we can talk about it.</p>
+<code>scheme     (define function-name         ( ...thing you want to name... ))</code>
+Now we can talk about it.</p>
 <p>The way we can make a 2-tuple in Pie (which is called a Pair) is with
 <code>cons</code>. I am skeptical calling <code>cons</code> a function
 because they do not directly say that in the book I’m using, but it acts
@@ -302,14 +302,14 @@ class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb5-1"><a hr
 <code>Atom</code>s (I think).</p>
 <p>Now that I have used <code>the</code> a few times, have you noticed
 something weird? Maybe you don’ thtink so, but to me <code>the</code>
-taking in a TYPE as input os odd. if you were in C and someone
+taking in a TYPE as input is odd. If you were in C and someone
 wrote:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> make_number<span class="op">(</span><span class="dv">1</span><span class="op">,</span> <span class="dt">float</span><span class="op">);</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> make_number<span class="op">(</span><span class="dv">1</span><span class="op">,</span> <span class="dt">int</span><span class="op">);</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="op">[</span>x is the <span class="dt">float</span> <span class="fl">1.0</span><span class="op">]</span></span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="op">[</span>y is the <span class="dt">int</span> <span class="dv">1</span><span class="op">]</span></span></code></pre></div>
 <p>I would be pretty taken aback, but in Pie, we will see types and data
-interchanged all the time.</p>
+used side-by-side all the time.</p>
 <p>Now we have three types: <code>Nat</code>, <code>Atom</code>, and
 <code>Pair</code>. <code>Pair</code> stands out here as different,
 because we dont just have an instance of <code>Pair</code>, we have a
@@ -341,7 +341,8 @@ will now say that instead of the regular <code>-&gt;</code> in a type
 declaration, we also have <code>-@</code> which means the argument was a
 type, not a value of a vertain type, and from then on I want Haskell to
 know and enforce that if the type is ever mentioned again treat it as
-the type that was input. It might look something like:</p>
+the type that was input. The type signature might look something
+like:</p>
 <div class="sourceCode" id="cb8"><pre
 class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ot">elimPair ::</span> <span class="dt">U1</span> <span class="op">-@</span> <span class="dt">U2</span> <span class="op">-@</span> <span class="dt">U3</span> <span class="op">-@</span> (<span class="dt">Pair</span> <span class="dt">U1</span> <span class="dt">U2</span>) <span class="ot">-&gt;</span> (<span class="dt">U1</span> <span class="ot">-&gt;</span> <span class="dt">U2</span> <span class="ot">-&gt;</span> <span class="dt">U3</span>)</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>

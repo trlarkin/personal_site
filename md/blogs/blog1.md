@@ -4,7 +4,7 @@
 This is the first "blog" in what will hopefully be a series of notes/explanations on some topics in functional programming. These topics will include dependent types and linear types. Enjoy!
 
 ## My issue with Scheme
-Scheme is a beautiful language, and the toy language "Pie" uses the Scheme syntax to build its toy language. My problem with it is that it is not as pretty, and how pretty something is can really affect my perception. In Scheme we end up with things like:
+Scheme is a beautiful language, and the toy language "Pie" uses the Scheme syntax as its base. My problem with it is that it is not pretty, and how pretty something is can really affect my opinion on it. In Scheme we end up with things like:
 ```scheme
 (define swap
     (lambda (p)
@@ -34,7 +34,6 @@ It is important to know a few things about Pie (the language),
     (define function-name
         ( ...thing you want to name... ))
     ```
-
 Now we can talk about it. 
 
 The way we can make a 2-tuple in Pie (which is called a Pair) is with `cons`. I am skeptical calling `cons` a function because they do not directly say that in the book I'm using, but it acts like one:
@@ -64,14 +63,14 @@ And we just get 1. Another type we are going to want to use is the `Atom` type, 
 ```
 Note we do not need to use the `the` function because `'hello` and `'world` are clearly `Atom`s (I think).
 
-Now that I have used `the` a few times, have you noticed something weird? Maybe you don' thtink so, but to me `the` taking in a TYPE as input os odd. if you were in C and someone wrote:
+Now that I have used `the` a few times, have you noticed something weird? Maybe you don' thtink so, but to me `the` taking in a TYPE as input is odd. If you were in C and someone wrote:
 ```c
 x = make_number(1, float);
 y = make_number(1, int);
 [x is the float 1.0]
 [y is the int 1]
 ```
-I would be pretty taken aback, but in Pie, we will see types and data interchanged all the time. 
+I would be pretty taken aback, but in Pie, we will see types and data used side-by-side all the time. 
 
 Now we have three types: `Nat`, `Atom`, and `Pair`. `Pair` stands out here as different, because we dont just have an instance of `Pair`, we have a `(Pair Nat Nat)` or `(Pair Atom Nat)` where the instance of the type is defined based on what the elements in the `Pair` will be. This means we can essentially use types like parameters to make types (eg `Pair`) and to change the behavior of a function (eg `the`). 
 
@@ -88,7 +87,7 @@ Lets go back to that funky code from the beginning:
             (lambda (a d)
                 (cons d a)))))
 ```
-yeah that one! Lets say that elim-Pair is defined to take in three types then a pair and a function of two arguments. In Haskell we cannot pass types around like this, but what if I add a little bit of syntax. I will now say that instead of the regular `->` in a type declaration, we also have `-@` which means the argument was a type, not a value of a vertain type, and from then on I want Haskell to know and enforce that if the type is ever mentioned again treat it as the type that was input. It might look something like:
+yeah that one! Lets say that elim-Pair is defined to take in three types then a pair and a function of two arguments. In Haskell we cannot pass types around like this, but what if I add a little bit of syntax. I will now say that instead of the regular `->` in a type declaration, we also have `-@` which means the argument was a type, not a value of a vertain type, and from then on I want Haskell to know and enforce that if the type is ever mentioned again treat it as the type that was input. The type signature might look something like:
 ```haskell
 elimPair :: U1 -@ U2 -@ U3 -@ (Pair U1 U2) -> (U1 -> U2 -> U3)
 
