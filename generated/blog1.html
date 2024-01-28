@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>html – blog1</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="blog-1">Blog 1</h1>
+<h2 id="preface">Preface</h2>
+<p>This is the first “blog” in what will hopefully be a series of
+notes/explanations on some topics in functional programming. These
+topics will include dependent types and linear types. Enjoy!</p>
+<h2 id="my-issue-with-scheme">My issue with Scheme</h2>
+<p>Scheme is a beautiful language, and the toy language “Pie” uses the
+Scheme syntax to build its toy language. My problem with it is that it
+is not as pretty, and how pretty something is can really affect my
+perception. In Scheme we end up with things like:</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define</span><span class="fu"> swap</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    (<span class="kw">lambda</span> (p)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>        (elim-Pair </span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>            Nat Atom</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>            (Pair Atom Nat</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>            p</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>            (<span class="kw">lambda</span> (a d)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>                (<span class="kw">cons</span> d a))))))</span></code></pre></div>
+<p>to define a function that swaps elements in a <code>Pair</code>
+(basically a 2-tuple as far as I understand). That said, I think it is
+actually good to learn a lisp-like language first because it forces you
+to understand things. In this case specifically the above code is
+technically from a language called “Pie” and I think as I go through
+<em>The Little Typer</em> I will try to convert code like that above
+into something more Haskelish for practice. Of course we are using Pie
+here in part <strong>BECAUSE</strong> Haskell does not have dependent
+types so the more Haskelish code will in fact not actually be
+Haskell.</p>
+<h2 id="getting-going">Getting Going</h2>
+<p>It is important to know a few things about Pie (the language), 1.
+Functions are applied in the form
+<code>scheme     (function arg1 arg2 ... argN)</code> 2. Anonymous
+functions are created by using
+<code>scheme     (lambda (arg1 arg2 ...)         ( ...body... ))</code>
+3. Naming a function that can be used elsewhere is
+<code>scheme     (define function-name         ( ...thing you want to name... ))</code></p>
+<p>Now we can talk about it.</p>
+<p>The way we can make a 2-tuple in Pie (which is called a Pair) is with
+<code>cons</code>. I am skeptical calling <code>cons</code> a function
+because they do not directly say that in the book I’m using, but it acts
+like one:</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (<span class="kw">cons</span> <span class="dv">1</span> <span class="dv">2</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;Error: 2-interactions from an unsaved </span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="st">editor:4:2: Can&#39;t determine a type&quot;</span></span></code></pre></div>
+<p>And we already have an error 😐. Pie is very strict with its types,
+so we can actually do this by using the <code>the</code> function, which
+lets us tell Pie what the type of out <code>Pair</code> is:</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (the (Pair Nat Nat) (<span class="kw">cons</span> <span class="dv">1</span> <span class="dv">2</span>))</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>(the (Pair Nat Nat)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  (<span class="kw">cons</span> <span class="dv">1</span> <span class="dv">2</span>))</span></code></pre></div>
+<p>Where <code>Nat</code> is the type of a natural number (0, 1, 2, …).
+We can then take the first element in the <code>Pair</code> with
+<code>car</code>:</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> (<span class="kw">car</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>   (the (Pair Nat Nat) (<span class="kw">cons</span> <span class="dv">1</span> <span class="dv">2</span>)))</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>(the Nat <span class="dv">1</span>)</span></code></pre></div>
+<p>And we just get 1. Another type we are going to want to use is the
+<code>Atom</code> type, which for now just think of as a string of
+letters following a <code>'</code> mark:</p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> &#39;hello</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>(the Atom &#39;hello)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> &#39;world</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>(the Atom &#39;world)</span></code></pre></div>
+<p>Note we do not need to use the <code>the</code> function because
+<code>'hello</code> and <code>'world</code> are clearly
+<code>Atom</code>s (I think).</p>
+<p>Now that I have used <code>the</code> a few times, have you noticed
+something weird? Maybe you don’ thtink so, but to me <code>the</code>
+taking in a TYPE as input os odd. if you were in C and someone
+wrote:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> make_number<span class="op">(</span><span class="dv">1</span><span class="op">,</span> <span class="dt">float</span><span class="op">);</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> make_number<span class="op">(</span><span class="dv">1</span><span class="op">,</span> <span class="dt">int</span><span class="op">);</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="op">[</span>x is the <span class="dt">float</span> <span class="fl">1.0</span><span class="op">]</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="op">[</span>y is the <span class="dt">int</span> <span class="dv">1</span><span class="op">]</span></span></code></pre></div>
+<p>I would be pretty taken aback, but in Pie, we will see types and data
+interchanged all the time.</p>
+<p>Now we have three types: <code>Nat</code>, <code>Atom</code>, and
+<code>Pair</code>. <code>Pair</code> stands out here as different,
+because we dont just have an instance of <code>Pair</code>, we have a
+<code>(Pair Nat Nat)</code> or <code>(Pair Atom Nat)</code> where the
+instance of the type is defined based on what the elements in the
+<code>Pair</code> will be. This means we can essentially use types like
+parameters to make types (eg <code>Pair</code>) and to change the
+behavior of a function (eg <code>the</code>).</p>
+<p>Since we are going to be using types like values, lets give all types
+a type, called <code>U</code>. This means the same way {<code>0</code>,
+<code>1</code>, <code>2</code>, <code>3</code>, <code>4</code>, …} are
+all <code>Nat</code>s and {<code>'hello</code>, <code>'world</code>, …}
+are all <code>Atom</code>s, {<code>Nat</code>, <code>Atom</code>,
+<code>Pair Atom Nat</code>, …} are all <code>U</code>s.</p>
+<p>Lets go back to that funky code from the beginning:</p>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode scheme"><code class="sourceCode scheme"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>(<span class="ex">define</span><span class="fu"> swap</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    (<span class="kw">lambda</span> (p)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>        (elim-Pair </span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>            Nat Atom</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>            (Pair Atom Nat)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>            p</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>            (<span class="kw">lambda</span> (a d)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>                (<span class="kw">cons</span> d a)))))</span></code></pre></div>
+<p>yeah that one! Lets say that elim-Pair is defined to take in three
+types then a pair and a function of two arguments. In Haskell we cannot
+pass types around like this, but what if I add a little bit of syntax. I
+will now say that instead of the regular <code>-&gt;</code> in a type
+declaration, we also have <code>-@</code> which means the argument was a
+type, not a value of a vertain type, and from then on I want Haskell to
+know and enforce that if the type is ever mentioned again treat it as
+the type that was input. It might look something like:</p>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ot">elimPair ::</span> <span class="dt">U1</span> <span class="op">-@</span> <span class="dt">U2</span> <span class="op">-@</span> <span class="dt">U3</span> <span class="op">-@</span> (<span class="dt">Pair</span> <span class="dt">U1</span> <span class="dt">U2</span>) <span class="ot">-&gt;</span> (<span class="dt">U1</span> <span class="ot">-&gt;</span> <span class="dt">U2</span> <span class="ot">-&gt;</span> <span class="dt">U3</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co">-- a valid input could be</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>elimPair <span class="dt">Bool</span> <span class="dt">Int</span> <span class="dt">String</span> (cons <span class="dt">True</span> <span class="dv">1</span>) (\a b <span class="ot">-&gt;</span> <span class="st">&quot;hello&quot;</span>)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co">-- an invalid input</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>elimPair <span class="dt">Int</span> <span class="dt">Int</span> <span class="dt">Float</span> (cons <span class="fl">2.5</span> <span class="dv">1</span>) (\a b <span class="ot">-&gt;</span> a)</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="co">{-fails because U1 is Int, and the </span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="co">Pair is a (Pair Float Int), which is </span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="co">not allowed since U1 us an Int -}</span></span></code></pre></div>
+<p>Okay, but what does <code>elim-Pair</code> do? <code>elim-Pair</code>
+takes out <code>Pair</code> and breaks it into pieces, then uses those
+elements to in the function to add as input. The use of types as
+arguments is helpful because we only need to define this one function
+for any combination of types, but we do not have to weaken our type
+system.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>This might not really properly show why we want dependent types, or
+what they really do, or explain how to use them, but I hope it shows the
+main odd idea about them, that they can be passed around like data.
+Hopefully I will also get better at this.</p>
+</body>
+</html>
