@@ -1,6 +1,5 @@
 <head>
-    <title>Resume</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../css/styles.css">
     <style>
         html {
             background: rgba(80, 199, 106, 0.5);
@@ -8,10 +7,14 @@
     </style>
 </head>
 
-# Resume
+---
+title:  'Resume'
+---
+
+<!-- # Resume -->
 
 [Click Here for a
-PDF](pdfs/Tristan_Larkin.pdf)
+PDF](../resources/Tristan_Larkin.pdf)
 
 ::: {#school}
 ## School
@@ -26,7 +29,7 @@ I am a student at the University of New Mexico (UNM) and I am studying
 -   **Minor**: Math
 :::
 
-::: {#coursework}
+<!-- ::: {#coursework}
 ## Coursework
 
   Class                                 | Semester     | Final Grade  | Subject Field:    | School   
@@ -64,7 +67,7 @@ I am a student at the University of New Mexico (UNM) and I am studying
   Statistical Mechanics                 | Fall 2022    | IP           | Physics           | University of NM 
   Junior Lab                            | Fall 2022    | IP           | Physics           | University of NM 
   Mathematical Methods of Physics       | Fall 2022    | IP           | Physics           | University of NM 
-:::
+::: -->
 
 ::: {#honors}
 ## Awards and Honors
@@ -77,7 +80,7 @@ I am a student at the University of New Mexico (UNM) and I am studying
 ::: {#skills}
 ## Skills and Proficiencies
 
--   **Java** - [[Java Projects]{.underline}](projects.html)
+-   **Java** - [[Java Projects]{.underline}](../html/projects.html)
 -   **Python** - [[Python
     Projects]{.underline}](https://github.com/trlarkin/python)
 -   **C-Lang** - [[C

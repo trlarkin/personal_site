@@ -1,4 +1,8 @@
-# Blog 1
+---
+title: 'Blog 1'
+---
+
+<!-- # Blog 1 -->
 
 ## Preface
 This is the first "blog" in what will hopefully be a series of notes/explanations on some topics in functional programming. These topics will include dependent types and linear types. Enjoy!
