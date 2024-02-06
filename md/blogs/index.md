@@ -9,4 +9,3 @@ title: 'List of Blogs'
 - @first-blog
 - @index
 - @pandoc-filters
-
