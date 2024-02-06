@@ -1,0 +1,1 @@
+cabal install --installdir="./exe/" --overwrite-policy=always

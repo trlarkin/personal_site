@@ -17,6 +17,10 @@ body {
     justify-content: center;
 }
 
+.sourceCode {
+    background: grey;
+}
+
 .name {
     position: absolute;
     display: flex;
@@ -137,9 +141,11 @@ a:active {
     0% {
         transform: translate(0, 0px);
     }
+
     50% {
         transform: translate(0, -20px);
     }
+
     100% {
         transform: translate(0, -0px);
     }
