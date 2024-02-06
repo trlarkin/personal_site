@@ -54,4 +54,4 @@ pandoc $(pwd)/md/blogs/$name}.md -o $(pwd)/generated/blogs/$name.html -f markdow
 ```
 where the `--filter` option is where I put the executable I get from Haskell code.
 
-These are cool and I hop to continue to use them to make my life easier!
+These are cool and I hope to continue to use them to make my life easier!
