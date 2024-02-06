@@ -14,7 +14,7 @@ title:  'Resume'
 <!-- # Resume -->
 
 [Click Here for a
-PDF](../resources/Tristan_Larkin.pdf)
+PDF](../resources/LarkinTristan-Resume.pdf)
 
 ::: {#school}
 ## School
