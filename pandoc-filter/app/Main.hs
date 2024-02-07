@@ -2,12 +2,14 @@ module Main where
 
 import qualified Data.Text        as T
 import           Text.Pandoc.JSON
+import           Text.Pandoc.Walk
 
 main :: IO ()
-main = do
-    -- toJSONFilter dollarHaskellBlock
-    toJSONFilter linkToBlog
-    return ()
+main = toJSONFilter compositeFilter
+
+compositeFilter :: Pandoc -> Pandoc
+compositeFilter = walk dollarHaskellBlock
+                . walk linkToBlog
 
 -- | Lets me act specially on codeblocks labeled '$haskell'
 dollarHaskellBlock :: Block -> Block

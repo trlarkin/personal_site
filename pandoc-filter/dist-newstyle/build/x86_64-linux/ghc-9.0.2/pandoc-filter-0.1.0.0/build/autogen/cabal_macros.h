@@ -20,16 +20,6 @@
   (major1) == 4 && (major2) <  15 || \
   (major1) == 4 && (major2) == 15 && (minor) <= 1)
 #endif /* MIN_VERSION_base */
-/* package pandoc-3.1.9 */
-#ifndef VERSION_pandoc
-#define VERSION_pandoc "3.1.9"
-#endif /* VERSION_pandoc */
-#ifndef MIN_VERSION_pandoc
-#define MIN_VERSION_pandoc(major1,major2,minor) (\
-  (major1) <  3 || \
-  (major1) == 3 && (major2) <  1 || \
-  (major1) == 3 && (major2) == 1 && (minor) <= 9)
-#endif /* MIN_VERSION_pandoc */
 /* package pandoc-types-1.23.1 */
 #ifndef VERSION_pandoc_types
 #define VERSION_pandoc_types "1.23.1"
