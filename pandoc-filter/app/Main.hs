@@ -14,7 +14,7 @@ compositeFilter = walk dollarHaskellBlock
 -- | Lets me act specially on codeblocks labeled '$haskell'
 dollarHaskellBlock :: Block -> Block
 dollarHaskellBlock (CodeBlock (identifier, cls:clss, keyValue) codeText)
-    | cls == T.pack "$haskell" = CodeBlock (identifier, T.pack "haskell":clss, keyValue) newCodeText
+    | "$haskell" <- T.unpack cls = CodeBlock (identifier, T.pack "haskell":clss, keyValue) newCodeText
         where
             newCodeText = codeText  -- do something here
 dollarHaskellBlock x = x
@@ -31,12 +31,9 @@ setStyle (Pandoc meta blocks)
 -- | adds a link to any blog with a word in the form @word
 linkToBlog :: Inline -> Inline
 linkToBlog (Str strText)
-    | head strString == '@' = linkTo
-    where
-        strString = T.unpack strText
-        linkTo = Link
-            ( T.empty , [] , [] )
-            [ Underline [ Str (T.tail strText) ]
-            ]
-            ( T.pack ("./" ++ (tail . T.unpack . T.toLower) strText ++ ".html") , T.empty )
+    | Just ('@', strTextTail) <- T.uncons strText = Link
+                ( T.empty , [] , [] )
+                [ Underline [ Str (T.tail strText) ]
+                ]
+                ( T.pack ("./" ++ (T.unpack . T.toLower) strTextTail ++ ".html") , T.empty )
 linkToBlog x = x
