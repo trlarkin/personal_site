@@ -60,6 +60,10 @@
     img {
       max-width: 100%;
     }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
     h1, h2, h3, h4, h5, h6 {
       margin-top: 1.4em;
     }
@@ -152,22 +156,134 @@
     div.columns{display: flex; gap: min(4vw, 1.5em);}
     div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
     ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
       width: 0.8em;
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
     }
-    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+  type="text/javascript"></script>
 </head>
 <body>
 <header id="title-block-header">
 <h1 class="title">Doppler Effect</h1>
 </header>
-<p>… hopefully coming soon</p>
+<h2 id="background">Background</h2>
+<p>The doppler effect is caused when a light source is moving relative
+to the viewer.</p>
+<figure>
+<img src="../../resources/Doppler-Effect-Souce-Moving-1.gif"
+alt="Image from source" />
+<figcaption aria-hidden="true"><em>Image from <a
+href="https://hearinghealthmatters.org/waynesworld/2016/doppler-effect-animated/">source</a></em></figcaption>
+</figure>
+<p>As seen in the GIF, as the source produces waves it moves towards
+waves it has already produced, resulting in a squishing effect which
+increases the frequency to a viewer that the source is heading towards,
+and decreases if the source is moving away from the observer. This
+becomes very easy to calculate when we are directly in the line of sight
+of the source’s velocity. I was going to skip the derivation, but I just
+realized I’ve never done it and will now try my hand at it, I am going
+to just assume the wave moves at the speed of light in a vacuum <span
+class="math inline">\(c\)</span>:</p>
+<p>Lets think about wave sources that produce a peak every <span
+class="math inline">\(\tau\)</span> or have a frequency of <span
+class="math inline">\(1/\tau = \nu_0\)</span>. Lets assume a moving
+observer at <span class="math inline">\(v_{obs}\)</span> and moving
+source <span class="math inline">\(v_{src}\)</span> (both at non
+relativistic speeds, see <span class="citation"
+data-cites="relativity"><a href="./relativity.html"
+role="doc-biblioref"><u>relativity</u></a></span>). We can say that the
+observer thinks it is stationary and sees the observer going at <span
+class="math inline">\(v_{src}&#39; = v_{src} + v_{obs}\)</span> and
+<span class="math inline">\(c&#39; = c + v_{obs}\)</span>. Now we can
+use the <span class="math inline">\(&#39;\)</span> versions and just
+pretend that the observer is stationary.</p>
+<p>Lets first see that <span class="math inline">\(c = \lambda_0
+\nu_0\)</span> If the source starts at <span
+class="math inline">\(x=0\)</span> and <span
+class="math inline">\(t=0\)</span> is when wave front 1 is produced and
+since we have a frequency of <span class="math inline">\(\nu_0\)</span>
+the next wave front is produced at <span
+class="math inline">\(t=1/\nu_0\)</span>.<br />
+<span class="math display">\[
+\begin{gather*}
+x_{f1}(t)
+\Rightarrow x_{f1}(\tau) = c&#39; \tau \\
+x_{f2}(t)
+\Rightarrow x_{f2}(\tau) = v_{src}&#39; \tau \\
+\end{gather*}
+\]</span></p>
+<p>The difference between the wave fronts is the wavelength <span
+class="math inline">\(\lambda\)</span> (not to be confused with <span
+class="math inline">\(\lambda_0\)</span> which is the wavelength of the
+source waves).</p>
+<p><span class="math display">\[
+\begin{align}
+c&#39; &amp;= \lambda \nu \\
+\lambda &amp;= x_{f1}(\tau) - x_{f2}(\tau) \\
+c&#39;/\nu &amp;= c&#39; \tau - v_{src}&#39; \tau \\
+c&#39;/\nu &amp;= (c&#39; - v_{src}&#39;) / \nu_0 \\
+\nu &amp;= \nu_0 \frac{c&#39;}{c&#39; - v_{src}} \\
+\nu &amp;= \nu_0 \frac{c&#39; + v_{obs}}{c&#39; + v_{obs} - v_{src} -
+v_{obs}}  \\
+\nu &amp;= \nu_0 \frac{c + v_{obs}}{c- v_{src}}
+\end{align}
+\]</span></p>
+<h2 id="why-do-we-care">Why do we care?</h2>
+<p>In reality this means a lot to us for a lot of reasons, seeing as how
+light is rather important. Since the doppler effect depends on the
+speeds of objects, we can use it (possibly unsurprisingly) to measure
+speeds of things that produce and reflect light.</p>
+<p>One famous example of this is the discovery that the universe is
+expanding. We were able to determine this by observing that most
+galaxies were more red than we expected them to be, and red-shifted
+light (lower frequency) means they were moving away from us.</p>
+<p>Of course at slower speeds we will not be able to measure the
+difference. If we assume out detector (observer) is not moving our (non
+relativistic) doppler equation becomes: <span class="math display">\[\nu
+= \nu_0 \frac{c}{c- v_{src}}\]</span> which means our source needs to be
+moving really fast in order to cause a significant difference in
+frequency.</p>
+<h2 id="measuring-slow-speeds">Measuring “Slow” Speeds</h2>
+<p>The way we can measure slow speeds is by measuring something called
+the beat frequency. If you have ever heard a “whaaa whaaa whaaa” when
+two sounds have a similar frequency, thats likely a beat frequency
+caused by interference. I am not going to derive it here but a beat
+frequency <span class="math inline">\(\nu_{beat} = |\nu_1 -
+\nu_2|\)</span> is easy to detect when the two frequencies are close.
+That means if we have a laser at some frequency <span
+class="math inline">\(\nu_0\)</span> and alter that frequency a bit
+(possible by using the doppler effect bounding off a slow moving
+object…) then we can create a beat frequency that is in the measurable
+range. Of course to do this we have to know the original frequency of
+the light, but we can generally assume we know the frequency of a laser
+that we buy so looks like we are all set, now all we have to do is set
+of a geometry so the laser and the doppler shifted light both hit the
+detector.</p>
+<h2 id="speed-of-a-train">Speed of a Train</h2>
+<p>So using what we know, we can come up for an equation to find the
+speed of a moving train given the beat frequency produced by the
+original laser and its doppler shifted reflection: <span
+class="math display">\[
+\begin{align*}
+ν_{beat} &amp;= |ν_0 - ν_{final}| \\
+ν_{final} &amp;= \frac{c + v_{train}}{c- v_{train}} \nu_0 \\
+ν_{final} (c- v_{train}) &amp;= \nu_0 (c + v_{train}) \\
+ν_{final} c - ν_{final}  v_{train} &amp;= \nu_0 c + \nu_0 v_{train} \\
+ν_{final} c - \nu_0 c  &amp;= \nu_0 v_{train} + ν_{final} v_{train} \\
+\frac{ν_{final} c - \nu_0 c}{\nu_0 + ν_{final}}  &amp;= v_{train} \\
+\frac{(\nu_0 + \nu_{beat}) c - \nu_0 c}{\nu_0 + (\nu_0 +
+\nu_{beat})}  &amp;= v_{train} \\
+c \frac{\nu_{beat}}{2\nu_0 + \nu_{beat}}  &amp;= v_{train}
+\end{align*}
+\]</span></p>
 </body>
 </html>

@@ -25,7 +25,7 @@ do
         new_name=${file%.md}
         echo $new_name
         echo "- @$new_name" >> md/blogs/index.md
-        pandoc $pwd/md/blogs/$new_name.md -o $pwd/generated/blogs/$new_name.html -f markdown -T html --filter pandoc-filter/exe/pandoc-filter # --css ../../css/blog.css
+        pandoc $pwd/md/blogs/$new_name.md -o $pwd/generated/blogs/$new_name.html -f markdown+tex_math_double_backslash -T html --filter pandoc-filter/exe/pandoc-filter  --mathjax # --css ../../css/blog.css
     fi
 done
 
