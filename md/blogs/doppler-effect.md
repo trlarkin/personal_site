@@ -10,7 +10,7 @@ The doppler effect is caused when a light source is moving relative to the viewe
 
 As seen in the GIF, as the source produces waves it moves towards waves it has already produced, resulting in a squishing effect which increases the frequency to a viewer that the source is heading towards, and decreases if the source is moving away from the observer. This becomes very easy to calculate when we are directly in the line of sight of the source's velocity. I was going to skip the derivation, but I just realized I've never done it and will now try my hand at it, I am going to just assume the wave moves at the speed of light in a vacuum $c$:
 
-Lets think about wave sources that produce a peak every $\tau$ or have a frequency of $1/\tau = \nu_0$. Lets assume a moving observer at $v_{obs}$ and moving source $v_{src}$ (both at non relativistic speeds, see @relativity). We can say that the observer thinks it is stationary and sees the observer going at $v_{src}' = v_{src} + v_{obs}$ and $c' = c + v_{obs}$. Now we can use the $'$ versions and just pretend that the observer is stationary. 
+Lets think about wave sources that produce a peak every $\tau$ or have a frequency of $1/\tau = \nu_0$. Lets assume a moving observer at $v_{obs}$ and moving source $v_{src}$ (both at non relativistic speeds, see @relativity). We can say that the observer thinks it is stationary and sees the observer going at $v_{src}' = v_{src} - v_{obs}$ and $c' = c - v_{obs}$. Now we can use the $'$ versions and just pretend that the observer is stationary. 
 
 Lets first see that $c = \lambda_0 \nu_0$ If the source starts at $x=0$ and $t=0$ is when wave front 1 is produced and since we have a frequency of $\nu_0$ the next wave front is produced at $t=1/\nu_0$.  
 $$
@@ -31,8 +31,8 @@ c' &= \lambda \nu \\
 c'/\nu &= c' \tau - v_{src}' \tau \\
 c'/\nu &= (c' - v_{src}') / \nu_0 \\
 \nu &= \nu_0 \frac{c'}{c' - v_{src}} \\
-\nu &= \nu_0 \frac{c' + v_{obs}}{c' + v_{obs} - v_{src} - v_{obs}}  \\
-\nu &= \nu_0 \frac{c + v_{obs}}{c- v_{src}}
+\nu &= \nu_0 \frac{c - v_{obs}}{c - v_{obs} - v_{src} + v_{obs}}  \\
+\nu &= \nu_0 \frac{c - v_{obs}}{c- v_{src}}
 \end{align}
 $$
 
@@ -66,4 +66,16 @@ $$
 c \frac{\nu_{beat}}{2\nu_0 + \nu_{beat}}  &= v_{train}
 \end{align*}
 $$
+
+It is important to notice what values have error here. I took many measurements of $\nu_{beat}$ and got a value of $460 \pm 20 \text{ kHz}$ where the uncertainty is statistical uncertainty. The laser comes with a bandwidth of what the actual frequency is going to be. The value from the manufacturer is $(4.73611764 \pm 0.00000002) \times 10^{14}\text{ Hz}$ but I am going to double check and to keep it interesting let me use $(4.74 \pm 0.01) \times 10^{14}\text{ Hz}$. After @error-propagation I get:
+$$
+\begin{gather*}
+f(x_1, x_2, ..., x_n) \\
+\Rightarrow \sigma_f(x_1,\sigma_{x_1}, x_2,\sigma_{x_2}...,x_n,\sigma_{x_n})  \\
+= \sqrt{(\frac{\partial f}{\partial x_1}\sigma_{x_1})^2 + ... + (\frac{\partial f}{\partial x_n}\sigma_{x_n})^2}
+\end{gather*} \\
+\Rightarrow\sigma_{v_{train}}= \sqrt{(\frac{c}{\nu_{beat}+2\nu_0})^2} \\
+= \sqrt{\frac{4 \sigma_{f_0}^{2} c^{2} f_{b}^{2}}{\left(2 f_{0} + f_{b}\right)^{4}} + \sigma_{f_beat}^{2} \left(- \frac{c f_{b}}{\left(2 f_{0} + f_{b}\right)^{2}} + \frac{c}{2 f_{0} + f_{b}}\right)^{2}}
+$$
+The value for v_train is 0.146e +/- 0.006 m/s m/s.
 
