@@ -10,7 +10,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: whitesmoke;
+    background-image: radial-gradient(circle, whitesmoke, rgb(226, 226, 226));
+
     margin: 0 0 0 0;
     display: flex;
     align-items: center;
@@ -28,15 +29,30 @@ body {
     justify-content: center;
     text-align: center;
     position: absolute;
-    top: 35%;
+    top: 25%;
     left: none;
-    width: 200;
     height: 160;
-    background: rgb(80, 114, 177);
     border-radius: 50% 50% 50% 50%;
 }
 
-.projects {
+#ball {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: absolute;
+    top: 60%;
+    left: none;
+    width: 100;
+    height: 100;
+    background: rgb(80, 114, 177);
+    border-radius: 50% 50% 50% 50%;
+    transform: translate(0, 0px);
+
+}
+
+
+.projects-bubble {
     position: absolute;
     display: flex;
     align-items: center;
@@ -47,11 +63,11 @@ body {
     left: 5%;
     width: 160;
     height: 120;
-    background: rgb(103, 206, 209);
+    background-image: linear-gradient(to right, rgb(103, 206, 209) , rgb(67, 167, 170));
     border-radius: 50% 50% 50% 50%;
 }
 
-.resume {
+.resume-bubble {
     position: absolute;
     display: flex;
     align-items: center;
@@ -62,11 +78,11 @@ body {
     right: 17%;
     width: 160;
     height: 120;
-    background: rgb(80, 199, 106);
+    background-image: linear-gradient(to right, rgb(80, 199, 106) , rgb(58, 155, 79));
     border-radius: 50% 50% 50% 50%;
 }
 
-.playground {
+.blogs-bubble {
     position: absolute;
     display: flex;
     align-items: center;
@@ -77,11 +93,11 @@ body {
     left: 15%;
     width: 160;
     height: 120;
-    background: rgb(139, 38, 235);
+    background-image: linear-gradient(to right, rgb(154, 69, 233) , rgb(96, 17, 170));
     border-radius: 50% 50% 50% 50%;
 }
 
-.contact {
+.about-bubble {
     position: absolute;
     display: flex;
     align-items: center;
@@ -92,7 +108,7 @@ body {
     right: 15%;
     width: 160;
     height: 120;
-    background: rgb(236, 96, 229);
+    background-image: linear-gradient(to right, rgb(252, 113, 245) , rgb(197, 77, 191));
     border-radius: 50% 50% 50% 50%;
 }
 
@@ -127,6 +143,16 @@ a:active {
     -ms-user-select: none;
     user-select: none;
 }
+
+.tl-bubble {
+    animation-name: floating1;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    margin-left: 30px;
+    margin-top: 5px;
+}
+
 
 .floating {
     animation-name: floating;
@@ -190,8 +216,10 @@ td {
 }
 
 .about {
-    position: fixed;
+    position: absolute;
     width: 75%;
     text-align: justify;
     right: 12.5%;
+    overflow: auto;
+    padding-bottom: 50;
 }
