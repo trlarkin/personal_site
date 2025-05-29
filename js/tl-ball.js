@@ -9,8 +9,6 @@ const BallHeight = offsets.height
 var ballVx = 0
 var ballVy = 0
 
-var height = window.innerHeight
-var width = window.innerWidth
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -36,6 +34,9 @@ function direction(x1, y1, x2, y2) {
 }
 
 function updateBall(forceX, forceY, dt){
+
+    var height = window.innerHeight
+    var width = window.innerWidth
     ballX += ballVx*dt
     ballY += ballVy*dt
 
