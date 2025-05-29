@@ -86,7 +86,8 @@ function gameLoop(t) {
     console.log(forceX)
 }
 
-setInterval(gameLoop, 1000 / 30);
+function startBall(){
+    setInterval(gameLoop, 1000 / 30);
+}
 
-
-
+ball.onclick = startBall
