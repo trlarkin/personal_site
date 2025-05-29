@@ -58,8 +58,8 @@ body {
     justify-content: center;
     text-align: center;
     position: absolute;
-    top: 60%;
-    right: 20%;
+    top: 65%;
+    right: 17%;
     width: 160;
     height: 120;
     background: rgb(80, 199, 106);
@@ -187,4 +187,11 @@ td {
 .wrapper {
     text-align: center;
     margin: 0 auto;
+}
+
+.about {
+    position: fixed;
+    width: 75%;
+    text-align: justify;
+    right: 12.5%;
 }

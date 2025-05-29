@@ -4,25 +4,86 @@
 
 <head>
     <title>Tristan Larkin</title>
+    <link rel="shortcut icon" type="image/x-icon" href="resources/images/t-lambda.ico" />
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body id="main_body">
     <div class="name floating noselect">
-        <h1>Tristan <br>Larkin</h1>
+        <div class="tl">
+            <div class="t">
+                <div class="top"></div>
+                <div class="leg"></div>
+            </div>
+            <div class="l">
+                <div class="long"></div>
+                <div class="short"></div>
+            </div>
+        </div>
     </div>
-    <a href="resources/LarkinTristan-Resume.pdf" class="resume floating noselect" style="animation-duration: 3.5s;">
+    <a href="resources/LarkinTristan-Resume.pdf" class="resume floating noselect" style="animation-duration: 3.5s;" target="_blank">
         <h1>Resume</h1>
     </a>
     <a href="html/projects.html" class="projects floating noselect" style="animation-duration: 4s;">
         <h1>Projects</h1>
     </a>
-    <a href="html/contact.html" class="contact floating noselect" style="animation-duration: 3.2s;">
-        <h1>Contact <br> Me</h1>
+    <a href="html/about.html" class="contact floating noselect" style="animation-duration: 3.2s;">
+        <h1>About <br> Me</h1>
     </a>
     <a href="generated/blogs/index.html" class="playground floating noselect" style="animation-duration: 3.2s;">
         <h1>Blogs</h1>
     </a>
 </body>
+
+<style>
+    .tl{
+        position: relative;
+        /* background: green; */
+        width: 40%;
+        height: 40%;
+        margin: 10%;
+    }
+    .t{
+        position: fixed;
+        left: 30%;
+        top: 35%;
+    }
+    .leg{
+        position: fixed;
+        width: 6;
+        height: 35;
+        background: black;
+        left: 40%;
+        top: 44%;
+    }
+    .top{
+        position: fixed;
+        width: 60;
+        height: 6;
+        top: 40%;
+        transform: rotate(-25deg);
+        background: black;
+    }
+    .l{
+        position: fixed;
+        right: 35%;
+        top: 52%;
+    }
+    .long{
+        background: black;
+        width: 35;
+        height: 4;
+        transform: rotate(60deg);
+    }
+    .short{
+        position: relative;
+        background: black;
+        width: 15;
+        height: 4;
+        left: 8;
+        top: 6;
+        transform: rotate(-60deg);
+    }
+</style>
 
 </html>
