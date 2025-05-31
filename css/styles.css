@@ -29,7 +29,7 @@ body {
     justify-content: center;
     text-align: center;
     position: absolute;
-    top: 25%;
+    top: 33%;
     left: none;
     height: 160;
     border-radius: 50% 50% 50% 50%;
@@ -45,7 +45,7 @@ body {
     left: none;
     width: 100;
     height: 100;
-    background: rgb(80, 114, 177);
+    background-image: radial-gradient(rgb(67, 125, 231) , rgb(80, 114, 177), rgb(14, 45, 102));
     border-radius: 50% 50% 50% 50%;
     transform: translate(0, 0px);
 

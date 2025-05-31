@@ -89,6 +89,8 @@ function gameLoop(t) {
 
 function startBall(){
     ball.classList = ""
+    ballX = offsets.x + BallWidth/2
+    ballY = offsets.y + BallWidth/2
     setInterval(gameLoop, 1000 / 30);
 }
 
