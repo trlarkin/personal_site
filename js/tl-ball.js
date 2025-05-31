@@ -75,19 +75,20 @@ function gameLoop(t) {
     if (mag < 5){
         mag = 5
     }
-    console.log(mag)
+    // console.log(mag)
     var r =  direction(ballX, ballY, mouseX, mouseY)
     var x = r[0]
     var y = r[1]
-    console.log(x)
+    // console.log(x)
 
     forceX = x / mag**2
     forceY = y / mag**2
     updateBall(forceX, forceY, 100)
-    console.log(forceX)
+    // console.log(forceX)
 }
 
 function startBall(){
+    ball.classList = ""
     setInterval(gameLoop, 1000 / 30);
 }
 
